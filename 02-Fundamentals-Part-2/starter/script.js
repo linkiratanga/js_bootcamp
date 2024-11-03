@@ -115,6 +115,7 @@ const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[2])];
 console.log(ages) */
 
 // Arrays methods
+/*
 const nameList = ["Link", "Peter", "Bahati"];
 nameList.push("Yohana"); // add element to the end
 nameList.unshift("Bukuru"); // add element to the begging
@@ -131,3 +132,18 @@ if(nameList.includes('Yohana')){
 } else{
   console.log(`You typed the wrong name!`)
 }
+*/
+// Tipping exercise
+const calcTip = function (tip) {
+  if (tip >= 50 && tip <= 300) {
+    const tipCalc = tip * 0.15;
+    return tipCalc;
+  } else {
+    const tipCalc2 = tip * 0.2;
+    return tipCalc2;
+  }
+};
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+console.log(tips);
