@@ -129,5 +129,5 @@ console.log(nameList.includes("Yohana")); // checks element existence
 if(nameList.includes('Yohana')){
   console.log(`Peter is your friend`)
 } else{
-  console.log(`You typed the wrong name`)
+  console.log(`You typed the wrong name!`)
 }
