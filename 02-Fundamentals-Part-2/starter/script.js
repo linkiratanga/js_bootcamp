@@ -90,9 +90,9 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 checkWinner(scoreDolphins, scoreKoalas);
 */
 
-// Data structure basics
+// DATA STRUCTURE
 
-// Array
+// Array ,  best for structure data
 /* const nameList = ["Link", "Peter", "Bahati"];
 const marks = new Array(20, 44, 65);
 nameList[1] = 'Jobz' // this replace an element
@@ -118,7 +118,7 @@ console.log(ages) */
 /*
 const nameList = ["Link", "Peter", "Bahati"];
 nameList.push("Yohana"); // add element to the end
-nameList.unshift("Bukuru"); // add element to the begging
+nameList.unshift("Bukuru"); // add element to the beginning
 
 nameList.pop(); // remove the last element
 nameList.shift(); // remove the first element
@@ -133,7 +133,8 @@ if(nameList.includes('Yohana')){
   console.log(`You typed the wrong name!`)
 }
 */
-// Tipping exercise
+// Coding Challenge #2 --> Tipping exercise
+/*
 const calcTip = function (tip) {
   if (tip >= 50 && tip <= 300) {
     const tipCalc = tip * 0.15;
@@ -147,3 +148,122 @@ const calcTip = function (tip) {
 const bills = [125, 555, 44];
 const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 console.log(tips);
+*/
+
+// Objects  , best for unstructured data
+/*
+const myId = {
+  firstName: "Link",
+  lastName: "Iratanga",
+  age: 2024 - 2003,
+  job: "ML engineer",
+  friends: ["Yohana", "Banks", "Malcom X"],
+};
+
+myId.home = "Bujumbura";
+myId["bornPlace"] = "Kinama";
+myId.friends.push("Jafari")
+const common = "Name";
+console.log(myId.friends[0]);
+console.log(myId.bornPlace)
+console.log(myId["first" + common]); // bracket notation receive data inputs and expressions
+
+console.log(`${myId.firstName} has ${myId.friends.length} friends`);
+console.log(myId.friends[length])
+*/
+
+// Object Methods
+/*
+const myId = {
+  firstName: "Link",
+  lastName: "Iratanga",
+  birthYear: 2003,
+  job: "ML engineer",
+  friends: ["Yohana", "Banks", "Malcom X"],
+  hasDriverLicense: true,
+  calcAge: function () {
+    this.age = 2024 - this.birthYear; // this , help to access objs inside an obj while using functions
+    return this.age;
+  },
+};
+
+console.log(myId.calcAge());
+// console.log(myId['calcAge']());
+
+console.log(myId);
+*/
+// Challenge
+// what element are restricted into an object eg: arrow stats !!
+/*
+const myId2 = {
+  firstName: "Johnson",
+  lastName: "Baraka",
+  hasDrivingPermit: false,
+  bornYear: 1999,
+  ageCalc2: function () {
+    this.currentAge = 2024 - this.bornYear;
+    return this.currentAge;
+  },
+  message: function () {
+    const choice = this.hasDrivingPermit ? "a" : "no";
+    return `${
+      this.firstName
+    } is a ${this.ageCalc2()} Developer and ${choice} Driver license`;
+  },
+};
+
+console.log(myId2.message());
+myId2.state = "California";
+myId2.lastName = "Dwayne"
+console.log(myId2);
+*/
+
+// Coding challenge #3
+/*
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+mark.calcBMI();
+
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.bmi = this.mass / this.height ** 2;
+    return this.bmi;
+  },
+};
+john.calcBMI();
+
+console.log(john.bmi, mark.bmi);
+
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s BMI (${john.bmi})`
+  );
+} else {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+  );
+}
+*/
+// LOOPS
+// for loop keeps running while conditon is TRUE
+// for (let initial = 0; initial < 5; initial++) {
+//   console.log(`This is Laps ${initial}`);
+// }
+
+const nameList = ["Malcom X", "Peter", 500 , "Bahati"];
+const types = [];
+for (let initial = 0; initial < nameList["length"]; initial++) {
+  console.log(`Mr ${nameList[initial]} is my friend`);
+console.log(typeof(nameList[initial]))
+
+}
