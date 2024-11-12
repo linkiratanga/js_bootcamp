@@ -162,7 +162,9 @@ age >= 21 ? console.log("You are mature") : console.log("Not mature at all");
 const maturityTest = age >= 21 ? "Yes" : "Not";
 console.log(maturityTest)
 */
-4 > 3 && 5 < 1 ? console.log("Type a small number") : console.log("Type a bigger number")
+4 > 3 && 5 < 1
+  ? console.log("Type a small number")
+  : console.log("Type a bigger number");
 
 // Exercise
 /*

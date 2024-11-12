@@ -119,15 +119,17 @@ console.log(ages) */
 const nameList = ["Link", "Peter", "Bahati"];
 nameList.push("Yohana"); // add element to the end
 nameList.unshift("Bukuru"); // add element to the beginning
+nameList[2] = "Johnson";
+
 
 nameList.pop(); // remove the last element
 nameList.shift(); // remove the first element
 
 console.log(nameList);
-console.log(nameList.indexOf("Peter")); // checks the index
-console.log(nameList.includes("Yohana")); // checks element existence
+console.log(nameList.indexOf("Peter")); // checks index
+console.log(nameList.includes("Yohana")); // checks els existence
 
-if(nameList.includes('Yohana')){
+if(nameList.includes('Johnson')){
   console.log(`Peter is your friend`)
 } else{
   console.log(`You typed the wrong name!`)
@@ -240,6 +242,20 @@ const john = {
     return this.bmi;
   },
 };
+
+const link = { 
+  fullName: "Link Iratanga",
+  mass: 50,
+  height: 1.5,
+  health: function(){
+    this.mass > 55? this.condition = "Exellent" : this.condition = "Bad";
+    return this.condition
+  }
+};
+
+const statment = `${link["fullName"]} is in ${link.health()} condition`;
+console.log(statment);
+
 john.calcBMI();
 
 console.log(john.bmi, mark.bmi);
@@ -254,16 +270,88 @@ if (mark.bmi > john.bmi) {
   );
 }
 */
+
 // LOOPS
 // for loop keeps running while conditon is TRUE
-// for (let initial = 0; initial < 5; initial++) {
-//   console.log(`This is Laps ${initial}`);
-// }
 
-const nameList = ["Malcom X", "Peter", 500 , "Bahati"];
+/*
+const nameList = ["Malcom X", "Peter", "Bahati"];
 const types = [];
+nameList.push("Douglas");
+
 for (let initial = 0; initial < nameList["length"]; initial++) {
-  console.log(`Mr ${nameList[initial]} is my friend`);
-console.log(typeof(nameList[initial]))
+  // console.log(`Mr ${nameList[initial]} is my friend`);
+  // console.log(typeof nameList[initial]);
+  types[initial] = nameList[initial];
+}
+
+console.log(types)
+
+const birthYear = [1982, 1986, 1993, 2003];
+const ages = []; 
+
+for(let og = 0; og < birthYear.length; og ++){
+  ages.push(2024 - birthYear[og]);
+}
+
+console.log(ages);
+*/
+// continue and break
+/*
+const nameList = ["Malcom X", 2003, "Bahati"];
+const types = [];
+
+for (let initial = nameList.length - 1; initial >= 0; initial--) {
+  // if (typeof nameList[initial] == "number") continue;
+  types[initial] = nameList[initial];
+  console.log(types[initial]);
+}
+
+for(let times = 0; times <= 5; times ++){
+  console.log(`This is Laps number ${times}`)
+  for(let laps = 10; laps > 0; laps -= 2){
+    console.log(`Round number ${laps}`);
+  }
+}
+*/
+
+// While loop
+/*
+let rep = 0;
+
+while(rep <= 10){
+  console.log(` You lifted ${rep} Times`)
+  rep += 2;
 
 }
+
+let diceRandom = Math.trunc(Math.random() * 6) + 1;
+console.log(diceRandom);
+
+while(diceRandom !== 6){
+  console.log(`You rolled a ${diceRandom}`)
+  diceRandom = Math.trunc(Math.random() * 6) + 1;
+  if(diceRandom === 6) console.log(`You hit a 6`)
+}
+*/
+// CODING CHALLENGE #4
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+const calcTip = function (tip) {
+  if (tip >= 50 && tip <= 300) {
+    return tip * 0.15;
+  } else {
+    return tip * 0.2;
+  }
+};
+
+for (let calc = 0; calc < bills.length; calc++) {
+  tips.push(calcTip(bills[calc]));
+  totals.push(tips[calc] + bills[calc]);
+  // totals[calc] = tips[calc] + bills[calc];
+}
+console.log(tips);
+console.log(totals);
