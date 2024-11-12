@@ -1,46 +1,22 @@
 "use strict";
-/*
-const ageGap = 2;
-const legalName = "iratanga";
-const ageTest =
-  ageGap >= 2 ? "The age gap 2 is great " : "That's too big age gap";
-console.log(ageTest);
-*/
-
-// functions
-
-/* function juiceMachine(apples, oranges) {
-  const juice = `Juice with ${apples} apples and ${oranges} oranges.`;
-  return juice;
-}
-
-const machineReturn = juiceMachine(5, 8);
-console.log(machineReturn);
-*/
-/*
-// Function Declaration
+// FUNCTION TYPES
+/*                 
+// FUNCTION DECLARATION
 function ageCalc1(birthYear1) {
   const age = 2024 - birthYear1;
   return age;
 }
 console.log(ageCalc1(2003));
 
-// Function Expression
+// FUNCTION EXPRESSION
 
 const ageCalc2 = function (birthYear) {
   return 2030 - birthYear;
 };
 console.log(ageCalc2(2010));
 
-// example
-const ageCalc5 = function (born, name) {
-  const currentAge = 2050 - born;
-  const message = `Mr ${name} is ${currentAge}, he is mature enough`;
-  return message;
-};
-console.log(ageCalc5(2005, "Link"));
 
-// Arrow function - just like fonction expression but not "This" keyword
+// ARROW FUNCTION - just like fonction expression but not "This" keyword
 
 const ageCalc3 = (birthYear) => 2037 - birthYear; // no return needed
 console.log(ageCalc3(2005));
@@ -101,20 +77,7 @@ console.log(nameList.length);
 console.log(nameList[nameList.length - 1])
 
 
-// exercise
-const calcAge = function (birthYear) {
-  return 2024 - birthYear
-}
-
-const years = [1990, 1996, 1991];
-console.log(calcAge(years[0]));
-console.log(calcAge(years[1]));
-console.log(calcAge(years[2]));
-
-const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[2])];
-console.log(ages) */
-
-// Arrays methods
+// ARRAYS methods
 /*
 const nameList = ["Link", "Peter", "Bahati"];
 nameList.push("Yohana"); // add element to the end
@@ -152,9 +115,9 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 console.log(tips);
 */
 
-// Objects  , best for unstructured data
+// OBJECTS  , best for unstructured data
 /*
-const myId = {
+const myIdentity = {
   firstName: "Link",
   lastName: "Iratanga",
   age: 2024 - 2003,
@@ -162,63 +125,13 @@ const myId = {
   friends: ["Yohana", "Banks", "Malcom X"],
 };
 
-myId.home = "Bujumbura";
-myId["bornPlace"] = "Kinama";
-myId.friends.push("Jafari")
-const common = "Name";
-console.log(myId.friends[0]);
-console.log(myId.bornPlace)
-console.log(myId["first" + common]); // bracket notation receive data inputs and expressions
-
-console.log(`${myId.firstName} has ${myId.friends.length} friends`);
-console.log(myId.friends[length])
+myIdentity.home = "Bujumbura"; // new property with value
+myIdentity["bornPlace"] = "Kinama";
+myIdentity.friends.push("Jafari");
+console.log(myIdentity);
 */
 
-// Object Methods
-/*
-const myId = {
-  firstName: "Link",
-  lastName: "Iratanga",
-  birthYear: 2003,
-  job: "ML engineer",
-  friends: ["Yohana", "Banks", "Malcom X"],
-  hasDriverLicense: true,
-  calcAge: function () {
-    this.age = 2024 - this.birthYear; // this , help to access objs inside an obj while using functions
-    return this.age;
-  },
-};
-
-console.log(myId.calcAge());
-// console.log(myId['calcAge']());
-
-console.log(myId);
-*/
-// Challenge
-// what element are restricted into an object eg: arrow stats !!
-/*
-const myId2 = {
-  firstName: "Johnson",
-  lastName: "Baraka",
-  hasDrivingPermit: false,
-  bornYear: 1999,
-  ageCalc2: function () {
-    this.currentAge = 2024 - this.bornYear;
-    return this.currentAge;
-  },
-  message: function () {
-    const choice = this.hasDrivingPermit ? "a" : "no";
-    return `${
-      this.firstName
-    } is a ${this.ageCalc2()} Developer and ${choice} Driver license`;
-  },
-};
-
-console.log(myId2.message());
-myId2.state = "California";
-myId2.lastName = "Dwayne"
-console.log(myId2);
-*/
+// OBJECT Methods works in a similar way with Arrays
 
 // Coding challenge #3
 /*
@@ -243,20 +156,18 @@ const john = {
   },
 };
 
-const link = { 
+const link = {
   fullName: "Link Iratanga",
   mass: 50,
   height: 1.5,
-  health: function(){
-    this.mass > 55? this.condition = "Exellent" : this.condition = "Bad";
-    return this.condition
-  }
+  health: function () {
+    this.mass > 55 ? (this.condition = "Exellent") : (this.condition = "Bad");
+    return this.condition;
+  },
 };
 
 const statment = `${link["fullName"]} is in ${link.health()} condition`;
 console.log(statment);
-
-john.calcBMI();
 
 console.log(john.bmi, mark.bmi);
 
@@ -266,12 +177,13 @@ if (mark.bmi > john.bmi) {
   );
 } else {
   console.log(
-    `${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s BMI (${mark.bmi})`
+    `${john.fullName}'s BMI (${john.calcBMI()}) is higher than ${
+      mark.fullName
+    }'s BMI (${mark.bmi})`
   );
 }
 */
-
-// LOOPS
+// FOR LOOP
 // for loop keeps running while conditon is TRUE
 
 /*
@@ -290,23 +202,24 @@ console.log(types)
 const birthYear = [1982, 1986, 1993, 2003];
 const ages = []; 
 
-for(let og = 0; og < birthYear.length; og ++){
-  ages.push(2024 - birthYear[og]);
+for(let ider = 0; ider < birthYear.length; ider ++){
+  ages.push(2024 - birthYear[ider]);
 }
 
 console.log(ages);
 */
-// continue and break
+// continue and break // !! not well understood ##
 /*
 const nameList = ["Malcom X", 2003, "Bahati"];
 const types = [];
 
 for (let initial = nameList.length - 1; initial >= 0; initial--) {
-  // if (typeof nameList[initial] == "number") continue;
-  types[initial] = nameList[initial];
-  console.log(types[initial]);
+  if (typeof nameList[initial] == "number") break; //
+  types.push(typeof nameList[initial]);
 }
-
+console.log(types);
+*/
+/*
 for(let times = 0; times <= 5; times ++){
   console.log(`This is Laps number ${times}`)
   for(let laps = 10; laps > 0; laps -= 2){
@@ -315,7 +228,8 @@ for(let times = 0; times <= 5; times ++){
 }
 */
 
-// While loop
+//    WHILE LOOP, same as for but initial value is store in a separated variable
+// Ideration for initial value is reassigned separeted but inside the loop
 /*
 let rep = 0;
 
@@ -335,7 +249,7 @@ while(diceRandom !== 6){
 }
 */
 // CODING CHALLENGE #4
-
+/*
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 let tips = [];
 let totals = [];
@@ -348,10 +262,11 @@ const calcTip = function (tip) {
   }
 };
 
-for (let calc = 0; calc < bills.length; calc++) {
-  tips.push(calcTip(bills[calc]));
-  totals.push(tips[calc] + bills[calc]);
-  // totals[calc] = tips[calc] + bills[calc];
+for (let ider = 0; ider < bills.length - 1; ider++) {
+  tips.push(calcTip(bills[ider]));
+  totals.push(tips[ider] + bills[ider]);
+  totals[ider] = tips[ider] + bills[ider];
 }
 console.log(tips);
 console.log(totals);
+*/
